@@ -60,3 +60,56 @@ const uniqueArray = arrayWithDuplicates.filter(item => {
   return !isAdded;
 });
 ```
+
+## 3. Update value (primitive) in array
+
+To update specific value we can use findIndex() method.
+
+```javascript
+const oldValue = 'James',
+  newValue = 'Arthur',
+  names = [
+    'Alice',
+    'Tom',
+    'Mark',
+    'Joan',
+    'Luke',
+    'James',
+    'Eve'
+  ];
+
+const index = names.findIndex(item => item === oldValue);
+
+  names[index] = newValue;
+```
+
+## 4. Update object in array
+
+To update specific object in array we can use map() method.
+
+```javascript
+const updated = { id: 4, name: 'Gandalf', lastName: 'The White' },
+  array = [
+    { id: 1, name: 'Tom', lastName: 'Bombadil' },
+    { id: 2, name: 'Frodo', lastName: 'Baggins' },
+    { id: 3, name: 'Bilbo', lastName: 'Baggins' },
+    { id: 4, name: 'Gandalf', lastName: 'The Grey' }
+  ];
+
+const updatedArray = array.map(item => item.id === updated.id ? updated : item);
+```
+
+## 5. Using array for condition checking
+
+We can use array include() method in condition checking.
+
+```javascript
+const input = 'cat',
+  animals = ['dog', 'cat', 'bird', 'fish', 'spider'];
+
+  if(animals.includes(input)) {
+    console.log('Animal');
+  } else {
+    console.log('Other');
+  }
+```
